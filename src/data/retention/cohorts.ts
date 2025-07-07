@@ -1,7 +1,7 @@
 import type { CohortRetentionData } from "./schema";
 
 export const cohorts: CohortRetentionData = {
-  "Sep 15, 2023": {
+  "อัตราการเติบโต": {
     "size": 2157,
     "dates": {
       "start": "2023-09-15T00:00:00.000Z",
@@ -95,7 +95,7 @@ export const cohorts: CohortRetentionData = {
       }
     ]
   },
-  "Sep 22, 2023": {
+  "คุณภาพน้ำ": {
     "size": 2584,
     "dates": {
       "start": "2023-09-22T00:00:00.000Z",
@@ -186,7 +186,7 @@ export const cohorts: CohortRetentionData = {
       null
     ]
   },
-  "Sep 29, 2023": {
+  "อาหาร": {
     "size": 2873,
     "dates": {
       "start": "2023-09-29T00:00:00.000Z",
@@ -274,7 +274,7 @@ export const cohorts: CohortRetentionData = {
       null
     ]
   },
-  "Oct 6, 2023": {
+  "กุ้งตาย": {
     "size": 2882,
     "dates": {
       "start": "2023-10-06T00:00:00.000Z",
@@ -359,7 +359,7 @@ export const cohorts: CohortRetentionData = {
       null
     ]
   },
-  "Oct 13, 2023": {
+  "เวชภัณฑ์": {
     "size": 2925,
     "dates": {
       "start": "2023-10-13T00:00:00.000Z",
@@ -441,7 +441,7 @@ export const cohorts: CohortRetentionData = {
       null
     ]
   },
-  "Oct 20, 2023": {
+  "ต้นทุน": {
     "size": 2066,
     "dates": {
       "start": "2023-10-20T00:00:00.000Z",
@@ -520,7 +520,7 @@ export const cohorts: CohortRetentionData = {
       null
     ]
   },
-  "Oct 27, 2023": {
+  "ขายกุ้ง": {
     "size": 2302,
     "dates": {
       "start": "2023-10-27T00:00:00.000Z",
@@ -588,216 +588,6 @@ export const cohorts: CohortRetentionData = {
         "percentage": 46.1,
         "count": 1061
       },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ]
-  },
-  "Nov 3, 2023": {
-    "size": 2361,
-    "dates": {
-      "start": "2023-11-03T00:00:00.000Z",
-      "end": "2023-11-10T00:00:00.000Z"
-    },
-    "summary": {
-      "activity": {
-        "total_tickets_created": 3821,
-        "total_tickets_resolved": 3301,
-        "total_calls_made": 2878,
-        "total_chat_sessions": 1784,
-        "total_email_interactions": 2167
-      },
-      "satisfaction": {
-        "avg_csat_score": 94.6,
-        "avg_nps_score": 40.5,
-        "total_satisfaction_responses": 1714,
-        "total_positive_feedback": 1282,
-        "total_negative_feedback": 820
-      },
-      "performance": {
-        "avg_response_time_minutes": 12.8,
-        "avg_handling_time_minutes": 15.4,
-        "avg_first_contact_resolution_rate": 0.85,
-        "avg_escalation_rate": 0.06
-      },
-      "top_issues": [
-        {
-          "category": "Document Request",
-          "count": 195,
-          "resolution_rate": 0.85
-        },
-        {
-          "category": "Complaint",
-          "count": 511,
-          "resolution_rate": 0.82
-        },
-        {
-          "category": "Fraud Report",
-          "count": 418,
-          "resolution_rate": 0.76
-        }
-      ],
-      "channels": {
-        "phone": 139,
-        "email": 85,
-        "chat": 47,
-        "social": 16
-      }
-    },
-    "weeks": [
-      {
-        "percentage": 100,
-        "count": 2361
-      },
-      {
-        "percentage": 66.9,
-        "count": 1579
-      },
-      {
-        "percentage": 51,
-        "count": 1204
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ]
-  },
-  "Nov 10, 2023": {
-    "size": 2729,
-    "dates": {
-      "start": "2023-11-10T00:00:00.000Z",
-      "end": "2023-11-17T00:00:00.000Z"
-    },
-    "summary": {
-      "activity": {
-        "total_tickets_created": 5254,
-        "total_tickets_resolved": 4275,
-        "total_calls_made": 3416,
-        "total_chat_sessions": 2512,
-        "total_email_interactions": 2864
-      },
-      "satisfaction": {
-        "avg_csat_score": 80,
-        "avg_nps_score": 58.6,
-        "total_satisfaction_responses": 2546,
-        "total_positive_feedback": 2038,
-        "total_negative_feedback": 857
-      },
-      "performance": {
-        "avg_response_time_minutes": 5.4,
-        "avg_handling_time_minutes": 19.6,
-        "avg_first_contact_resolution_rate": 0.81,
-        "avg_escalation_rate": 0.05
-      },
-      "top_issues": [
-        {
-          "category": "Coverage Inquiry",
-          "count": 578,
-          "resolution_rate": 0.82
-        },
-        {
-          "category": "Coverage Inquiry",
-          "count": 403,
-          "resolution_rate": 0.8
-        },
-        {
-          "category": "Accident Report",
-          "count": 383,
-          "resolution_rate": 0.71
-        }
-      ],
-      "channels": {
-        "phone": 104,
-        "email": 120,
-        "chat": 81,
-        "social": 18
-      }
-    },
-    "weeks": [
-      {
-        "percentage": 100,
-        "count": 2729
-      },
-      {
-        "percentage": 69.9,
-        "count": 1907
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
-    ]
-  },
-  "Nov 17, 2023": {
-    "size": 2905,
-    "dates": {
-      "start": "2023-11-17T00:00:00.000Z",
-      "end": "2023-11-24T00:00:00.000Z"
-    },
-    "summary": {
-      "activity": {
-        "total_tickets_created": 5266,
-        "total_tickets_resolved": 4301,
-        "total_calls_made": 3368,
-        "total_chat_sessions": 2229,
-        "total_email_interactions": 2117
-      },
-      "satisfaction": {
-        "avg_csat_score": 79.7,
-        "avg_nps_score": 64.5,
-        "total_satisfaction_responses": 2147,
-        "total_positive_feedback": 1598,
-        "total_negative_feedback": 348
-      },
-      "performance": {
-        "avg_response_time_minutes": 9.2,
-        "avg_handling_time_minutes": 14.1,
-        "avg_first_contact_resolution_rate": 0.83,
-        "avg_escalation_rate": 0.18
-      },
-      "top_issues": [
-        {
-          "category": "Policy Changes",
-          "count": 547,
-          "resolution_rate": 0.94
-        },
-        {
-          "category": "Account Service",
-          "count": 375,
-          "resolution_rate": 0.89
-        },
-        {
-          "category": "Account Service",
-          "count": 210,
-          "resolution_rate": 0.89
-        }
-      ],
-      "channels": {
-        "phone": 145,
-        "email": 96,
-        "chat": 63,
-        "social": 25
-      }
-    },
-    "weeks": [
-      {
-        "percentage": 100,
-        "count": 2905
-      },
-      null,
-      null,
-      null,
       null,
       null,
       null,

@@ -268,11 +268,11 @@ export default function CohortRetention() {
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="text-2xl font-semibold text-gray-900 dark:text-gray-50">
-            Cohort Retention
+            Round Breakdown
           </h1>
           <p className="text-gray-500 sm:text-sm/6 dark:text-gray-500">
-            Track customer engagement patterns and analyze support trends across
-            user segments
+            {/* Track customer engagement patterns and analyze support trends across
+            user segments */}
           </p>
         </div>
       </div>
@@ -283,17 +283,17 @@ export default function CohortRetention() {
             <TableHead>
               <TableRow>
                 <TableHeaderCell className="sticky left-0 top-0 z-10 min-w-40 border-transparent bg-white p-px dark:border-transparent dark:bg-gray-950">
-                  <span className="block">Cohort</span>
-                  <span className="block font-normal text-gray-500 dark:text-gray-500">
-                    Initial customers
-                  </span>
+                  {/* <span className="block">Cohort</span> */}
+                  {/* <span className="block font-normal text-gray-500 dark:text-gray-500">
+                    Initial customers */}
+                  {/* </span> */}
                 </TableHeaderCell>
                 {weeks.map((week) => (
                   <TableHeaderCell
                     key={week}
                     className="border-none font-medium"
                   >
-                    Week {week}
+                    Round {week}
                   </TableHeaderCell>
                 ))}
               </TableRow>
@@ -308,17 +308,17 @@ export default function CohortRetention() {
                           "group relative -ml-2 h-full w-full rounded p-2 text-left transition hover:bg-gray-100 focus-visible:bg-gray-100 hover:dark:bg-gray-900 focus-visible:dark:bg-gray-900",
                           focusRing,
                         )}
-                        onClick={() => {
-                          setSelectedCohort(cohortData)
-                          setSelectedCohortKey(cohortKey)
-                        }}
+                      // onClick={() => {
+                      //   setSelectedCohort(cohortData)
+                      //   setSelectedCohortKey(cohortKey)
+                      // }}
                       >
                         <RiExpandDiagonalLine className="absolute right-4 top-4 size-5 shrink-0 text-gray-500/0 transition group-hover:text-gray-500 group-focus-visible:text-gray-500" />
                         <span className="block text-sm font-medium text-gray-900 dark:text-gray-50">
                           {cohortKey}
                         </span>
                         <span className="mt-0.5 block text-sm text-gray-500 dark:text-gray-500">
-                          {valueFormatter(cohortData.size)} customers
+                          {valueFormatter(cohortData.size)} kg
                         </span>
                       </button>
                     </TableCell>
