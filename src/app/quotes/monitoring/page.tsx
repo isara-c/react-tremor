@@ -31,7 +31,7 @@ const logisticGrowth = (day: number, maxWeight: number, steepness: number, midpo
   return maxWeight / (1 + Math.exp(-steepness * (day - midpoint)));
 };
 
-export const data_dt: MainChart[] = Array.from({ length: 120 }, (_, i) => {
+const data_dt: MainChart[] = Array.from({ length: 120 }, (_, i) => {
   const day = i + 1;
 
   const dailyMortality = Math.random() < 0.3 ? Math.floor(Math.random() * 10) : null;

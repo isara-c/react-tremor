@@ -31,6 +31,7 @@
     "tailwindcss-safe-area": "^0.6.0"
   },
   "devDependencies": {
+    "@faker-js/faker": "^9.9.0",
     "@types/node": "^22.13.14",
     "@types/react": "19.0.4",
     "@types/react-dom": "19.0.2",
