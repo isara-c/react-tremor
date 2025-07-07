@@ -376,6 +376,49 @@ export const dataChart: DataChart[] = [
   },
 ]
 
+
+// interface MainChart {
+//   date: string
+//   Round_1: number
+//   Round_2: number
+//   Round_3: number
+//   Dead: number
+// }
+// export const MainChart: MainChart[] = [
+//   {
+//     date: "Jan 24",
+//     Round_1: 120,
+//     Round_2: 120,
+//     Round_3: number
+//     "Alk": 55000,
+//   },
+//   {
+//     date: "Feb 24",
+//     Mg2: 183,
+//     "Alk": 75400,
+//   },
+//   {
+//     date: "Mar 24",
+//     Mg2: 165,
+//     "Alk": 50450,
+//   },
+//   {
+//     date: "Apr 24",
+//     Mg2: 99,
+//     "Alk": 41540,
+//   },
+//   {
+//     date: "May 24",
+//     Mg2: 194,
+//     "Alk": 63850,
+//   },
+//   {
+//     date: "Jun 24",
+//     Mg2: 241,
+//     "Alk": 73850,
+//   },
+// ]
+
 export const dataChart2: DataChart2[] = [
   {
     date: "Jan 24",
@@ -561,3 +604,33 @@ export const sections: Section[] = [
     ],
   },
 ]
+
+interface GrowthData {
+  week: number;
+  'น้ำหนัก (g)': number;
+}
+
+interface MortalityData {
+  doc: number;
+  'จำนวนกุ้งตาย (ตัว)': number;
+}
+
+export const growthDataCycle1: GrowthData[] = Array.from({ length: 16 }, (_, i) => ({
+  week: i + 1,
+  'น้ำหนัก (g)': parseFloat((0.5 * Math.pow(1.45, i) + Math.random() * 0.5).toFixed(2)),
+}));
+
+export const growthDataCycle2: GrowthData[] = Array.from({ length: 16 }, (_, i) => ({
+  week: i + 1,
+  'น้ำหนัก (g)': parseFloat((0.45 * Math.pow(1.48, i) + Math.random() * 0.4).toFixed(2)),
+}));
+
+export const growthDataCycle3: GrowthData[] = Array.from({ length: 16 }, (_, i) => ({
+  week: i + 1,
+  'น้ำหนัก (g)': parseFloat((0.52 * Math.pow(1.42, i) + Math.random() * 0.6).toFixed(2)),
+}));
+
+export const mortalityData: MortalityData[] = Array.from({ length: 120 }, (_, i) => ({
+  doc: i + 1,
+  'จำนวนกุ้งตาย (ตัว)': Math.floor(Math.random() * (i < 80 ? 50 : 150)) + 10,
+}));

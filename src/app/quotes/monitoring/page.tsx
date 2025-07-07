@@ -19,19 +19,37 @@ const waterQualityData = Array.from({ length: 60 }, (_, i) => ({
   "Temp AM": 28 + Math.random() * 1.5,
   "Temp PM": 29 + Math.random() * 2,
 }))
+interface MainChart {
+  date: string;
+  Round_1: number;
+  Round_2: number;
+  Round_3: number;
+  Mortality: number | null;
+}
 
-const mainChartData = Array.from({ length: 60 }, (_, i) => ({
-  doc: i + 1,
-  "Growth Rate": 0.15 + Math.random() * 0.1,
-  "Mortality": Math.floor(Math.random() * 50) + 5,
-}))
+const logisticGrowth = (day: number, maxWeight: number, steepness: number, midpoint: number) => {
+  return maxWeight / (1 + Math.exp(-steepness * (day - midpoint)));
+};
+
+export const data_dt: MainChart[] = Array.from({ length: 120 }, (_, i) => {
+  const day = i + 1;
+
+  const dailyMortality = Math.random() < 0.3 ? Math.floor(Math.random() * 10) : null;
+
+  return {
+    date: `DoC ${day}`,
+    Round_1: parseFloat(logisticGrowth(day, 28, 0.1, 70).toFixed(2)),
+    Round_2: parseFloat(logisticGrowth(day, 22, 0.15, 60).toFixed(2)),
+    Round_3: parseFloat(logisticGrowth(day, 35, 0.08, 80).toFixed(2)),
+    Mortality: dailyMortality,
+  };
+});
 
 export default function Monitoring() {
   return (
     <section aria-label="App Monitoring">
       <div className="flex flex-col items-center justify-between gap-2 p-6 sm:flex-row"></div>
 
-      {/* --- กราฟหลักที่เพิ่มเข้ามาด้านบน --- */}
       <div className="border-t border-gray-200 p-6 dark:border-gray-800">
         <div className="flex flex-col justify-between p-0">
           <div>
@@ -39,32 +57,33 @@ export default function Monitoring() {
               ภาพรวมการเลี้ยง (Growth & Mortality)
             </dt>
             <dd className="mt-1 text-sm/6 text-gray-500 dark:text-gray-500">
-              อัตราการเติบโต (ADG) และจำนวนกุ้งตายสะสมรายวัน
+              อัตราการเติบโต (ADG) และจำนวนกุ้งตายรายวัน
             </dd>
-          </div><div className="border-t border-gray-200 p-6 dark:border-gray-800">
-            <div className="flex flex-col justify-between p-0">
+            <div className="flex pt-6  flex-col justify-between p-0">
+
               <ComboChart
-                data={mainChartData}
-                index="doc"
+                data={data_dt}
+                index="date"
                 enableBiaxial={true}
                 barSeries={{
                   categories: ["Mortality"],
-                  colors: ["rose"],
-                  yAxisLabel: "จำนวนกุ้งตาย (ตัว)",
+                  colors: ["lightGray"],
+                  showYAxis: false,
                 }}
                 lineSeries={{
-                  categories: ["Growth Rate"],
-                  colors: ["emerald"],
-                  yAxisLabel: "ADG",
+                  categories: ["Round_1", "Round_2", "Round_3"],
+                  colors: ["blue", "gray", "lightGray",],
+                  showYAxis: false,
+                  yAxisLabel: "น้ำหนัก (g)",
+                  strokeWidth: 10,
                 }}
-                className="mt-4 h-80"
+                customTooltip={CustomTooltip2}
               />
             </div>
           </div>
         </div>
       </div>
 
-      {/* --- กริดกราฟเดิม --- */}
       <dl className="grid grid-cols-1 gap-x-14 gap-y-10 border-t border-gray-200 p-6 md:grid-cols-2 dark:border-gray-800">
         <div className="flex flex-col justify-between p-0">
           <div>

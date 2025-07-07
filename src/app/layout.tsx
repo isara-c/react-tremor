@@ -1,4 +1,3 @@
-import { Breadcrumbs } from "@/components/ui/navigation/Breadcrumbs"
 import type { Metadata } from "next"
 import { ThemeProvider } from "next-themes"
 import localFont from "next/font/local"
@@ -66,13 +65,7 @@ export default async function RootLayout({
           disableTransitionOnChange
           attribute="class"
         >
-          {/* <AppSidebar /> */}
           <div className="w-full">
-            <header className="sticky top-0 z-10 flex h-16 shrink-0 items-center gap-2 border-b border-gray-200 bg-white px-4 dark:border-gray-800 dark:bg-gray-950">
-              {/* <SidebarTrigger className="-ml-1" /> */}
-              <div className="mr-2 h-4 w-px bg-gray-200 dark:bg-gray-800" />
-              <Breadcrumbs />
-            </header>
             <main>{children}</main>
           </div>
         </ThemeProvider>

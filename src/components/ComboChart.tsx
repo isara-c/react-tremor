@@ -137,7 +137,7 @@ const LegendItem = ({
           // text color
           "text-gray-700 dark:text-gray-300",
           hasOnValueChange &&
-            "group-hover:text-gray-900 dark:group-hover:text-gray-50",
+          "group-hover:text-gray-900 dark:group-hover:text-gray-50",
           activeLegend && activeLegend !== name ? "opacity-40" : "opacity-100",
         )}
       >
@@ -408,7 +408,7 @@ const ChartLegend = (
     legendPosition === "left" && barYAxisWidth ? barYAxisWidth - 8 : 0
   const paddingRight =
     (legendPosition === "right" || legendPosition === undefined) &&
-    lineYAxisWidth
+      lineYAxisWidth
       ? lineYAxisWidth - 8
       : 52
 
@@ -600,6 +600,7 @@ interface ComboChartProps extends React.HTMLAttributes<HTMLDivElement> {
     type?: "default" | "stacked"
   }
   lineSeries?: ChartSeries & {
+    strokeWidth?: number
     connectNulls?: boolean
   }
 }
@@ -660,10 +661,10 @@ const ComboChart = React.forwardRef<HTMLDivElement, ComboChartProps>(
         !mergedBarSeries.showYAxis &&
         enableBiaxial &&
         !mergedLineSeries.showYAxis) ||
-      (startEndOnly &&
-        !mergedBarSeries.showYAxis &&
-        enableBiaxial &&
-        !mergedLineSeries.showYAxis)
+        (startEndOnly &&
+          !mergedBarSeries.showYAxis &&
+          enableBiaxial &&
+          !mergedLineSeries.showYAxis)
         ? 0
         : 20
     const [legendHeight, setLegendHeight] = React.useState(60)
@@ -788,11 +789,11 @@ const ComboChart = React.forwardRef<HTMLDivElement, ComboChartProps>(
             onClick={
               hasOnValueChange && (activeLegend || activeBar || activeDot)
                 ? () => {
-                    setActiveBar(undefined)
-                    setActiveDot(undefined)
-                    setActiveLegend(undefined)
-                    onValueChange?.(null)
-                  }
+                  setActiveBar(undefined)
+                  setActiveDot(undefined)
+                  setActiveLegend(undefined)
+                  onValueChange?.(null)
+                }
                 : undefined
             }
             margin={{
@@ -933,21 +934,21 @@ const ComboChart = React.forwardRef<HTMLDivElement, ComboChartProps>(
               content={({ active, payload, label }) => {
                 const cleanPayload: TooltipProps["payload"] = payload
                   ? payload.map((item: any) => ({
-                      category: item.dataKey,
-                      value: item.value,
-                      index: item.payload[index],
-                      barColor: barCategoryColors.get(
-                        item.dataKey,
-                      ) as AvailableChartColorsKeys,
-                      lineColor: lineCategoryColors.get(
-                        item.dataKey,
-                      ) as AvailableChartColorsKeys,
-                      chartType: barCategoryColors.get(item.dataKey)
-                        ? "bar"
-                        : ("line" as PayloadItem["chartType"]),
-                      type: item.type,
-                      payload: item.payload,
-                    }))
+                    category: item.dataKey,
+                    value: item.value,
+                    index: item.payload[index],
+                    barColor: barCategoryColors.get(
+                      item.dataKey,
+                    ) as AvailableChartColorsKeys,
+                    lineColor: lineCategoryColors.get(
+                      item.dataKey,
+                    ) as AvailableChartColorsKeys,
+                    chartType: barCategoryColors.get(item.dataKey)
+                      ? "bar"
+                      : ("line" as PayloadItem["chartType"]),
+                    type: item.type,
+                    payload: item.payload,
+                  }))
                   : []
 
                 if (
@@ -992,7 +993,7 @@ const ComboChart = React.forwardRef<HTMLDivElement, ComboChartProps>(
                     activeLegend,
                     hasOnValueChange
                       ? (clickedLegendItem: string) =>
-                          onCategoryClick(clickedLegendItem)
+                        onCategoryClick(clickedLegendItem)
                       : undefined,
                     enableLegendSlider,
                     legendPosition,
@@ -1028,27 +1029,27 @@ const ComboChart = React.forwardRef<HTMLDivElement, ComboChartProps>(
             {/* hidden lines to increase clickable target area */}
             {onValueChange
               ? mergedLineSeries.categories.map((category) => (
-                  <Line
-                    yAxisId={enableBiaxial ? "right" : undefined}
-                    className={cx("cursor-pointer")}
-                    strokeOpacity={0}
-                    key={category}
-                    name={category}
-                    type="linear"
-                    dataKey={category}
-                    stroke="transparent"
-                    fill="transparent"
-                    legendType="none"
-                    tooltipType="none"
-                    strokeWidth={12}
-                    connectNulls={mergedLineSeries.connectNulls}
-                    onClick={(props: any, event) => {
-                      event.stopPropagation()
-                      const { name } = props
-                      onCategoryClick(name)
-                    }}
-                  />
-                ))
+                <Line
+                  yAxisId={enableBiaxial ? "right" : undefined}
+                  className={cx("cursor-pointer")}
+                  strokeOpacity={0}
+                  key={category}
+                  name={category}
+                  type="linear"
+                  dataKey={category}
+                  stroke="transparent"
+                  fill="transparent"
+                  legendType="none"
+                  tooltipType="none"
+                  strokeWidth={12}
+                  connectNulls={mergedLineSeries.connectNulls}
+                  onClick={(props: any, event) => {
+                    event.stopPropagation()
+                    const { name } = props
+                    onCategoryClick(name)
+                  }}
+                />
+              ))
               : null}
             {mergedLineSeries.categories.map((category) => (
               <Line

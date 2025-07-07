@@ -50,19 +50,19 @@ function Indicator({ number }: { number: number }) {
 }
 const metrics: Metric[] = [
   {
-    label: "อัตราการรอด (Survival Rate)",
+    label: "จำนวนกุ้งที่ปล่อย",
     value: 0.8,
     percentage: "85.1%",
-    fraction: "280/329",
+    fraction: "280329",
   },
   {
-    label: "ความหนาแน่นในบ่อ (Stocking Density)",
+    label: "ไซส์กุ้ง",
     value: 0.24,
     percentage: "12.9%",
     fraction: "129/1K",
   },
   {
-    label: "อัตราการเจริญเติบโต (Growth Rate)",
+    label: "กุ้งตายสะสม",
     value: 0.61,
     percentage: "59.8%",
     fraction: "450/752",
@@ -92,7 +92,7 @@ export function MetricsCards() {
   return (
     <>
       <h1 className="text-lg font-semibold text-gray-900 dark:text-gray-50">
-        Overview
+        {/* Overview */}
       </h1>
       <dl className="mt-6 flex flex-wrap items-center gap-x-12 gap-y-8">
         {metrics.map((metric) => (
